@@ -1,21 +1,89 @@
 Initializing operator stack with operator # with priority of -100
 entering pushnode
-Solving the epxression: A@(2*(A-C*D))+(9*B/(2*C+1)-B*3)+E%(F-A)#
+Solving the epxression: 2*A-3*((B-2*C)/(A+3)-B*3)#
+parsing 2
+This is an operand 2
+Entering findValue
+Found the value 2 for 2
+Pushing 2 onto the operand stack
+entering pushnode
+parsing *
+This is an operator *
+Entering findValue
+Found the value 2 for *
+Peeking at top of stack -100
+entering pushnode
 parsing A
 This is an operand A
 Entering findValue
-Found the value 8 for A
-Pushing 8 onto the operand stack
+Found the value 
+|1, 2|
+|3, 4|
+ for A
+Pushing 
+|1, 2|
+|3, 4|
+ onto the operand stack
 entering pushnode
-parsing @
-This is an operator @
+parsing -
+This is an operator -
 Entering findValue
-Found the value 3 for @
-Peeking at top of stack -100
+Found the value 1 for -
+Peeking at top of stack 2
+entering popnode
+entering popnode
+entering popnode
+In popEvalPush, evaluating 2*
+|1, 2|
+|3, 4|
+
+Entering intEval for: 2*
+|1, 2|
+|3, 4|
+
+Pushing operand 
+|2, 4|
+|6, 8|
+ onto the stack
+entering pushnode
+entering pushnode
+parsing 3
+This is an operand 3
+Entering findValue
+Found the value 3 for 3
+Pushing 3 onto the operand stack
+entering pushnode
+parsing *
+This is an operator *
+Entering findValue
+Found the value 2 for *
+Peeking at top of stack 1
 entering pushnode
 parsing (
 This is an operator (
 pushing on operator stack (
+entering pushnode
+parsing (
+This is an operator (
+pushing on operator stack (
+entering pushnode
+parsing B
+This is an operand B
+Entering findValue
+Found the value 
+|6, 6|
+|8, 8|
+ for B
+Pushing 
+|6, 6|
+|8, 8|
+ onto the operand stack
+entering pushnode
+parsing -
+This is an operator -
+Entering findValue
+Found the value 1 for -
+Peeking at top of stack -99
 entering pushnode
 parsing 2
 This is an operand 2
@@ -27,173 +95,112 @@ parsing *
 This is an operator *
 Entering findValue
 Found the value 2 for *
-Peeking at top of stack -99
-entering pushnode
-parsing (
-This is an operator (
-pushing on operator stack (
-entering pushnode
-parsing A
-This is an operand A
-Entering findValue
-Found the value 8 for A
-Pushing 8 onto the operand stack
-entering pushnode
-parsing -
-This is an operator -
-Entering findValue
-Found the value 1 for -
-Peeking at top of stack -99
+Peeking at top of stack 1
 entering pushnode
 parsing C
 This is an operand C
 Entering findValue
-Found the value 2 for C
-Pushing 2 onto the operand stack
-entering pushnode
-parsing *
-This is an operator *
-Entering findValue
-Found the value 2 for *
-Peeking at top of stack 1
-entering pushnode
-parsing D
-This is an operand D
-Entering findValue
-Found the value 3 for D
-Pushing 3 onto the operand stack
+Found the value 
+|1, 2|
+|2, 1|
+ for C
+Pushing 
+|1, 2|
+|2, 1|
+ onto the operand stack
 entering pushnode
 parsing )
 This is an operator )
 entering popnode
 entering popnode
 entering popnode
-In popEvalPush, evaluating 2*3
-Entering intEval for: 2*3
-Evaluated 2*3 Result: 6
-Pushing operand 6 onto the stack
+In popEvalPush, evaluating 2*
+|1, 2|
+|2, 1|
+
+Entering intEval for: 2*
+|1, 2|
+|2, 1|
+
+Pushing operand 
+|2, 4|
+|4, 2|
+ onto the stack
 entering pushnode
 entering popnode
 entering popnode
 entering popnode
-In popEvalPush, evaluating 8-6
-Entering intEval for: 8-6
-Evaluated 8-6 Result: 2
-Pushing operand 2 onto the stack
+In popEvalPush, evaluating 
+|6, 6|
+|8, 8|
+-
+|2, 4|
+|4, 2|
+
+Entering intEval for: 
+|6, 6|
+|8, 8|
+-
+|2, 4|
+|4, 2|
+
+Pushing operand 
+|4, 2|
+|4, 6|
+ onto the stack
 entering pushnode
 entering popnode
-parsing )
-This is an operator )
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 2*2
-Entering intEval for: 2*2
-Evaluated 2*2 Result: 4
-Pushing operand 4 onto the stack
-entering pushnode
-entering popnode
-parsing +
-This is an operator +
-Entering findValue
-Found the value 1 for +
-Peeking at top of stack 3
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 8@4
-Entering intEval for: 8@4
-Evaluated 8@4 Result: 4096
-Pushing operand 4096 onto the stack
-entering pushnode
-entering pushnode
-parsing (
-This is an operator (
-pushing on operator stack (
-entering pushnode
-parsing 9
-This is an operand 9
-Entering findValue
-Found the value 9 for 9
-Pushing 9 onto the operand stack
-entering pushnode
-parsing *
-This is an operator *
-Entering findValue
-Found the value 2 for *
-Peeking at top of stack -99
-entering pushnode
-parsing B
-This is an operand B
-Entering findValue
-Found the value 12 for B
-Pushing 12 onto the operand stack
-entering pushnode
 parsing /
 This is an operator /
 Entering findValue
 Found the value 2 for /
-Peeking at top of stack 2
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 9*12
-Entering intEval for: 9*12
-Evaluated 9*12 Result: 108
-Pushing operand 108 onto the stack
-entering pushnode
+Peeking at top of stack -99
 entering pushnode
 parsing (
 This is an operator (
 pushing on operator stack (
 entering pushnode
-parsing 2
-This is an operand 2
+parsing A
+This is an operand A
 Entering findValue
-Found the value 2 for 2
-Pushing 2 onto the operand stack
-entering pushnode
-parsing *
-This is an operator *
-Entering findValue
-Found the value 2 for *
-Peeking at top of stack -99
-entering pushnode
-parsing C
-This is an operand C
-Entering findValue
-Found the value 2 for C
-Pushing 2 onto the operand stack
+Found the value 
+|1, 2|
+|3, 4|
+ for A
+Pushing 
+|1, 2|
+|3, 4|
+ onto the operand stack
 entering pushnode
 parsing +
 This is an operator +
 Entering findValue
 Found the value 1 for +
-Peeking at top of stack 2
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 2*2
-Entering intEval for: 2*2
-Evaluated 2*2 Result: 4
-Pushing operand 4 onto the stack
+Peeking at top of stack -99
 entering pushnode
-entering pushnode
-parsing 1
-This is an operand 1
+parsing 3
+This is an operand 3
 Entering findValue
-Found the value 1 for 1
-Pushing 1 onto the operand stack
+Found the value 3 for 3
+Pushing 3 onto the operand stack
 entering pushnode
 parsing )
 This is an operator )
 entering popnode
 entering popnode
 entering popnode
-In popEvalPush, evaluating 4+1
-Entering intEval for: 4+1
-Evaluated 4+1 Result: 5
-Pushing operand 5 onto the stack
+In popEvalPush, evaluating 
+|1, 2|
+|3, 4|
++3
+Entering intEval for: 
+|1, 2|
+|3, 4|
++3
+Pushing operand 
+|4, 5|
+|6, 7|
+ onto the stack
 entering pushnode
 entering popnode
 parsing -
@@ -204,17 +211,37 @@ Peeking at top of stack 2
 entering popnode
 entering popnode
 entering popnode
-In popEvalPush, evaluating 108/5
-Entering intEval for: 108/5
-Evaluated 108/5 Result: 21
-Pushing operand 21 onto the stack
+In popEvalPush, evaluating 
+|4, 2|
+|4, 6|
+/
+|4, 5|
+|6, 7|
+
+Entering intEval for: 
+|4, 2|
+|4, 6|
+/
+|4, 5|
+|6, 7|
+
+Pushing operand 
+|1, 0|
+|0, 0|
+ onto the stack
 entering pushnode
 entering pushnode
 parsing B
 This is an operand B
 Entering findValue
-Found the value 12 for B
-Pushing 12 onto the operand stack
+Found the value 
+|6, 6|
+|8, 8|
+ for B
+Pushing 
+|6, 6|
+|8, 8|
+ onto the operand stack
 entering pushnode
 parsing *
 This is an operator *
@@ -233,312 +260,85 @@ This is an operator )
 entering popnode
 entering popnode
 entering popnode
-In popEvalPush, evaluating 12*3
-Entering intEval for: 12*3
-Evaluated 12*3 Result: 36
-Pushing operand 36 onto the stack
+In popEvalPush, evaluating 
+|6, 6|
+|8, 8|
+*3
+Entering intEval for: 
+|6, 6|
+|8, 8|
+*3
+Pushing operand 
+|18, 18|
+|24, 24|
+ onto the stack
 entering pushnode
 entering popnode
 entering popnode
 entering popnode
-In popEvalPush, evaluating 21-36
-Entering intEval for: 21-36
-Evaluated 21-36 Result: -15
-Pushing operand -15 onto the stack
-entering pushnode
-entering popnode
-parsing +
-This is an operator +
-Entering findValue
-Found the value 1 for +
-Peeking at top of stack 1
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 4096+-15
-Entering intEval for: 4096+-15
-Evaluated 4096+-15 Result: 4081
-Pushing operand 4081 onto the stack
-entering pushnode
-entering pushnode
-parsing E
-This is an operand E
-Entering findValue
-Found the value 15 for E
-Pushing 15 onto the operand stack
-entering pushnode
-parsing %
-This is an operator %
-Entering findValue
-Found the value 2 for %
-Peeking at top of stack 1
-entering pushnode
-parsing (
-This is an operator (
-pushing on operator stack (
-entering pushnode
-parsing F
-This is an operand F
-Entering findValue
-Found the value 4 for F
-Pushing 4 onto the operand stack
-entering pushnode
-parsing -
-This is an operator -
-Entering findValue
-Found the value 1 for -
-Peeking at top of stack -99
-entering pushnode
-parsing A
-This is an operand A
-Entering findValue
-Found the value 8 for A
-Pushing 8 onto the operand stack
-entering pushnode
-parsing )
-This is an operator )
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 4-8
-Entering intEval for: 4-8
-Evaluated 4-8 Result: -4
-Pushing operand -4 onto the stack
+In popEvalPush, evaluating 
+|1, 0|
+|0, 0|
+-
+|18, 18|
+|24, 24|
+
+Entering intEval for: 
+|1, 0|
+|0, 0|
+-
+|18, 18|
+|24, 24|
+
+Pushing operand 
+|-17, -18|
+|-24, -24|
+ onto the stack
 entering pushnode
 entering popnode
 entering popnode
 entering popnode
 entering popnode
-In popEvalPush, evaluating 15%-4
-Entering intEval for: 15%-4
-Evaluated 15%-4 Result: 3
-Pushing operand 3 onto the stack
+In popEvalPush, evaluating 3*
+|-17, -18|
+|-24, -24|
+
+Entering intEval for: 3*
+|-17, -18|
+|-24, -24|
+
+Pushing operand 
+|-51, -54|
+|-72, -72|
+ onto the stack
 entering pushnode
 entering popnode
 entering popnode
 entering popnode
-In popEvalPush, evaluating 4081+3
-Entering intEval for: 4081+3
-Evaluated 4081+3 Result: 4084
-Pushing operand 4084 onto the stack
+In popEvalPush, evaluating 
+|2, 4|
+|6, 8|
+-
+|-51, -54|
+|-72, -72|
+
+Entering intEval for: 
+|2, 4|
+|6, 8|
+-
+|-51, -54|
+|-72, -72|
+
+Pushing operand 
+|53, 58|
+|78, 80|
+ onto the stack
 entering pushnode
 entering popnode
 
-The result for this expression is 4084
-END OF EVALUATION
-------------------------------------------
-Initializing operator stack with operator # with priority of -100
-entering pushnode
-Solving the epxression: B*(3@(A-D)%(B-C@D))+4@D*2#
-parsing B
-This is an operand B
-Entering findValue
-Found the value 12 for B
-Pushing 12 onto the operand stack
-entering pushnode
-parsing *
-This is an operator *
-Entering findValue
-Found the value 2 for *
-Peeking at top of stack -100
-entering pushnode
-parsing (
-This is an operator (
-pushing on operator stack (
-entering pushnode
-parsing 3
-This is an operand 3
-Entering findValue
-Found the value 3 for 3
-Pushing 3 onto the operand stack
-entering pushnode
-parsing @
-This is an operator @
-Entering findValue
-Found the value 3 for @
-Peeking at top of stack -99
-entering pushnode
-parsing (
-This is an operator (
-pushing on operator stack (
-entering pushnode
-parsing A
-This is an operand A
-Entering findValue
-Found the value 8 for A
-Pushing 8 onto the operand stack
-entering pushnode
-parsing -
-This is an operator -
-Entering findValue
-Found the value 1 for -
-Peeking at top of stack -99
-entering pushnode
-parsing D
-This is an operand D
-Entering findValue
-Found the value 3 for D
-Pushing 3 onto the operand stack
-entering pushnode
-parsing )
-This is an operator )
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 8-3
-Entering intEval for: 8-3
-Evaluated 8-3 Result: 5
-Pushing operand 5 onto the stack
-entering pushnode
-entering popnode
-parsing %
-This is an operator %
-Entering findValue
-Found the value 2 for %
-Peeking at top of stack 3
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 3@5
-Entering intEval for: 3@5
-Evaluated 3@5 Result: 243
-Pushing operand 243 onto the stack
-entering pushnode
-entering pushnode
-parsing (
-This is an operator (
-pushing on operator stack (
-entering pushnode
-parsing B
-This is an operand B
-Entering findValue
-Found the value 12 for B
-Pushing 12 onto the operand stack
-entering pushnode
-parsing -
-This is an operator -
-Entering findValue
-Found the value 1 for -
-Peeking at top of stack -99
-entering pushnode
-parsing C
-This is an operand C
-Entering findValue
-Found the value 2 for C
-Pushing 2 onto the operand stack
-entering pushnode
-parsing @
-This is an operator @
-Entering findValue
-Found the value 3 for @
-Peeking at top of stack 1
-entering pushnode
-parsing D
-This is an operand D
-Entering findValue
-Found the value 3 for D
-Pushing 3 onto the operand stack
-entering pushnode
-parsing )
-This is an operator )
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 2@3
-Entering intEval for: 2@3
-Evaluated 2@3 Result: 8
-Pushing operand 8 onto the stack
-entering pushnode
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 12-8
-Entering intEval for: 12-8
-Evaluated 12-8 Result: 4
-Pushing operand 4 onto the stack
-entering pushnode
-entering popnode
-parsing )
-This is an operator )
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 243%4
-Entering intEval for: 243%4
-Evaluated 243%4 Result: 3
-Pushing operand 3 onto the stack
-entering pushnode
-entering popnode
-parsing +
-This is an operator +
-Entering findValue
-Found the value 1 for +
-Peeking at top of stack 2
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 12*3
-Entering intEval for: 12*3
-Evaluated 12*3 Result: 36
-Pushing operand 36 onto the stack
-entering pushnode
-entering pushnode
-parsing 4
-This is an operand 4
-Entering findValue
-Found the value 4 for 4
-Pushing 4 onto the operand stack
-entering pushnode
-parsing @
-This is an operator @
-Entering findValue
-Found the value 3 for @
-Peeking at top of stack 1
-entering pushnode
-parsing D
-This is an operand D
-Entering findValue
-Found the value 3 for D
-Pushing 3 onto the operand stack
-entering pushnode
-parsing *
-This is an operator *
-Entering findValue
-Found the value 2 for *
-Peeking at top of stack 3
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 4@3
-Entering intEval for: 4@3
-Evaluated 4@3 Result: 64
-Pushing operand 64 onto the stack
-entering pushnode
-entering pushnode
-parsing 2
-This is an operand 2
-Entering findValue
-Found the value 2 for 2
-Pushing 2 onto the operand stack
-entering pushnode
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 64*2
-Entering intEval for: 64*2
-Evaluated 64*2 Result: 128
-Pushing operand 128 onto the stack
-entering pushnode
-entering popnode
-entering popnode
-entering popnode
-In popEvalPush, evaluating 36+128
-Entering intEval for: 36+128
-Evaluated 36+128 Result: 164
-Pushing operand 164 onto the stack
-entering pushnode
-entering popnode
+The result for this expression is 
+|53, 58|
+|78, 80|
 
-The result for this expression is 164
 END OF EVALUATION
 ------------------------------------------
