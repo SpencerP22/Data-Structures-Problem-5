@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /*****************************************************************************
  * Author: Spencer Palmeter
  * CSC-285 Data Structures
- * Problem 6 Part 2
+ * Problem 5 Part 2
  * 
  * This program reads an expression one character at at a time, and solves
  * the equation in one pass. The evaluator accepts six different operators
