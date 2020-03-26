@@ -21,8 +21,8 @@ import java.util.ArrayList;
  * 
  ** CHANGES FOR PART 2 **
  * 
- * Implemented Matrix multiplication.
- * Created a new Matrix class and converted 
+ * Implemented Matrix operations.
+ * Created a new Matrix class and converted all ints to a Matrix objects
  * 
  *****************************************************************************/
 class Main {
@@ -116,11 +116,12 @@ class Main {
                     }
                 }
                 i++;
-            }
+            } // end while
             // finish out the remaining operations
             while((operators.peeknode()).operator != '#'){
                 popEvalPush(operators, operands);
-            } 
+            }
+            // pop the final answer off the stack 
             Matrix expressionValue = operands.popnode();
             
             System.out.println("\nThe result for this expression is " + expressionValue.toString());
@@ -133,6 +134,7 @@ class Main {
         }
     } // end main method
 
+    // converts char array to a string
     public static String expToString(char[] expression){
         String s = "";
         for(char character: expression) s+= character;
@@ -164,10 +166,12 @@ class Main {
     } // end findValue
 
     
-
+    // this method receives to operands and an operator and completes the operation
+    // it returns a matrix object containing the result of the operation
     public static Matrix intEval(Matrix operand1, char operator, Matrix operand2){
         System.out.println("Entering intEval for: " + operand1 + operator + operand2);
         Matrix result = new Matrix();
+        
         // logic for a constant operating on a constant
         if(operand1.type == 'c' && operand2.type == 'c'){
             switch(operator){
@@ -227,24 +231,28 @@ class Main {
                     for(int i=0; i < 4; i++){
                         result.values[i] += operand1.values[0];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '-':
                     result = new Matrix(operand2);
                     for(int i=0; i < 4; i++){
                         result.values[i] = operand1.values[0] - result.values[i];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '*':
                     result = new Matrix(operand2);
                     for(int i=0; i < 4; i++){
                         result.values[i] *= operand1.values[0];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '/':
                     result = new Matrix(operand2);
                     for(int i=0; i < 4; i++){
                         result.values[i] = operand1.values[0] / result.values[i];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 default:
                     System.out.println(operator + " does not work with matrices!");
@@ -260,24 +268,28 @@ class Main {
                     for(int i=0; i < 4; i++){
                         result.values[i] += operand2.values[0];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '-':
                     result = new Matrix(operand1);
                     for(int i=0; i < 4; i++){
                         result.values[i] -= operand2.values[0];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '*':
                     result = new Matrix(operand1);
                     for(int i=0; i < 4; i++){
                         result.values[i] *= operand2.values[0];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '/':
                     result = new Matrix(operand1);
                     for(int i=0; i < 4; i++){
                         result.values[i] /= operand2.values[0];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 default:
                     System.out.println(operator + " does not work with matrices!");
@@ -293,24 +305,28 @@ class Main {
                     for(int i=0; i < 4; i++){
                         result.values[i] += operand2.values[i];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '-':
                     result = new Matrix(operand1);;
                     for(int i=0; i < 4; i++){
                         result.values[i] -= operand2.values[i];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '*':
                     result = new Matrix(operand1);;
                     for(int i=0; i < 4; i++){
                         result.values[i] *= operand2.values[i];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 case '/':
                     result = new Matrix(operand1);;
                     for(int i=0; i < 4; i++){
                         result.values[i] = operand1.values[i] / operand2.values[i];
                     }
+                    System.out.println("Evaluated " + operand1.values[0] + operator + operand2.values[0] + " Result: " + result.values[0]);
                     return result;
                 default:
                     System.out.println(operator + " does not work with matrices!");
@@ -320,6 +336,7 @@ class Main {
         return result;
     } // end intEval
 
+    // this method pops the top to operands and the top operator off the stack and evaluates the operation
     public static void popEvalPush(GenericStackManager<OperatorObj> x, GenericStackManager<Matrix> y){
         Matrix a,b,c = new Matrix();
         char operator;
@@ -341,6 +358,8 @@ class Main {
 
 } // end main
 
+// This class is used to create object stacks of Type T, it contains the helper functions
+// pushnode, popnode and peeknode
 class GenericStackManager<T> {
 
     protected ArrayList<T> myStack;
@@ -398,6 +417,9 @@ class OperatorObj {
 
 } // end OperatorObj
 
+// class for creating Matrices. Matrices contain an int[] which holds 4 values and also
+// has a character type for each matrix. Matrices with type 'm' are true matrices, while
+// matrices with type 'c' are used to define integer constants.
 class Matrix {
     protected int[] values;
     protected char type;
@@ -408,13 +430,14 @@ class Matrix {
         values = new int[]{val1, val2, val3, val4};
     }
 
-    // make a constant Matrix out of a given number
+    // make a constant Matrix out of a given number. Constants conatin 4 of the same num in values
     public Matrix(int num){
         type = 'c';
         values = new int[]{num, num ,num ,num};
     }
 
-    // makes a hard COPY of a matrix
+    // makes a deep COPY of a matrix. Important when completing matrix operations
+    // to avoid reference errors and overwriting of default matrix values
     public Matrix(Matrix x){
         values = new int[]{0,0,0,0};
         for(int i = 0; i < 4; i++){
@@ -429,8 +452,11 @@ class Matrix {
         values = new int[]{-99,-99,-99,-99};
     }
 
+    // get methods for type and values
     public char getType(){return type;}
+    public int[] getValues(){return values;}
 
+    // toString method for printing matrix values
     @Override
     public String toString() {
         String s;
@@ -441,4 +467,6 @@ class Matrix {
         }
         return s;
     }
+
 } // end Matrix
+// end program
