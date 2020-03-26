@@ -166,7 +166,7 @@ class Main {
     } // end findValue
 
     
-    // this method receives to operands and an operator and completes the operation
+    // this method receives two operands and an operator and completes the operation
     // it returns a matrix object containing the result of the operation
     public static Matrix intEval(Matrix operand1, char operator, Matrix operand2){
         System.out.println("Entering intEval for: " + operand1 + operator + operand2);
